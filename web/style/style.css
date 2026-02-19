@@ -179,7 +179,7 @@
 /* Hero who */
 .hero {
 
-  background: linear-gradient(to right, rgb(0, 80, 0), rgba(0, 80, 0, 0)), url("../images/4.JPG") center/cover no-repeat;
+  background: linear-gradient(to right, rgb(0, 80, 0), rgba(0, 80, 0, 0)), url("../Images/4.JPG") center/cover no-repeat;
   color: white;
   padding: 80px 40px;
   text-align: left;
@@ -322,7 +322,7 @@
 /* banner */
 /* Banner who */
 .banner {
-  background: url("../images/Purple\ White\ Professional\ Presentation.jpg") repeat center center;
+  background: url("../Images/Purple\ White\ Professional\ Presentation.jpg") repeat center center;
   background-size: cover;
   padding: 100px 20px;
   text-align: center;
@@ -693,7 +693,7 @@
 /* services  */
 .services-hero {
 
-  background: linear-gradient(to right, rgb(0, 80, 0), rgba(0, 80, 0, 0)), url("../images/5.JPG") center/cover no-repeat;
+  background: linear-gradient(to right, rgb(0, 80, 0), rgba(0, 80, 0, 0)), url("../Images/5.JPG") center/cover no-repeat;
   color: white;
   padding: 80px 40px;
   text-align: left;
