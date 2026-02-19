@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,95 +25,73 @@
 
 <!-- Main Content -->
 <div class="main-content">
-   <div class="upload-box">
-   <label class="file-label">
-    <input type="file" id="imageFile" hidden>
-    <span class="file-btn"><i class="fa fa-image"></i> Choose Image</span>
-    <span id="file-name">No file chosen</span>
-</label>
-
+    <div class="upload-box">
+    <input type="file" id="imageFile">
     <input type="text" id="caption" placeholder="Enter caption">
     <button id="uploadBtn">Upload</button>
-   </div>
-
+</div>
 
     <div class="grid" id="grid"></div>
 </div>
 <script>
 $(document).ready(function(){
 
-    function getImages(){
-        return JSON.parse(localStorage.getItem("images")) || [];
-    }
+    function loadImages() {
+        $.getJSON("images.json", function(data){
 
-    function saveImages(images){
-        localStorage.setItem("images", JSON.stringify(images));
-    }
+            $("#grid").empty();
 
-    function loadImages(){
-        let images = getImages();
-        $("#grid").empty();
+            $.each(data, function(index, item){
 
-        images.forEach(function(item, index){
+                let card = `
+                    <div class="card">
+                        <img src="images/${item.file}" alt="">
+                        <div class="caption">${item.caption}</div>
+                        <button class="deleteBtn" data-file="${item.file}">Delete</button>
+                    </div>
+                `;
 
-            let card = `
-                <div class="card">
-                    <img src="${item.file}" alt="">
-                    <div class="caption">${item.caption}</div>
-                    <button class="deleteBtn" data-index="${index}">Delete</button>
-                </div>
-            `;
-
-            $("#grid").append(card);
+                $("#grid").append(card);
+            });
         });
     }
 
     loadImages();
 
-    $("#imageFile").on("change", function(){
-    let fileName = this.files[0] ? this.files[0].name : "No file chosen";
-    $("#file-name").text(fileName);
-});
-
-
-    // Upload
+    // Upload Image
     $("#uploadBtn").click(function(){
 
         let file = $("#imageFile")[0].files[0];
         let caption = $("#caption").val();
 
-        if(!file) return alert("Select image first!");
+        let formData = new FormData();
+        formData.append("image", file);
+        formData.append("caption", caption);
 
-        let reader = new FileReader();
+        $.ajax({
+            url: "upload.php",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(){
+                loadImages();
+                $("#caption").val("");
+                $("#imageFile").val("");
+            }
+        });
 
-        reader.onload = function(e){
-
-            let images = getImages();
-
-            images.push({
-                file: e.target.result,  // base64 image
-                caption: caption
-            });
-
-            saveImages(images);
-            loadImages();
-
-            $("#caption").val("");
-            $("#imageFile").val("");
-        };
-
-        reader.readAsDataURL(file);
     });
 
-    // Delete
+    // Delete Image
     $(document).on("click", ".deleteBtn", function(){
 
-        let index = $(this).data("index");
-        let images = getImages();
+        let file = $(this).data("file");
 
-        images.splice(index, 1);
-        saveImages(images);
-        loadImages();
+        $.post("delete.php", { file: file }, function(){
+            loadImages();
+        });
+
     });
 
 });
