@@ -1,4 +1,6 @@
 [
+
+   { "file": "24.jpg", "caption": "kindly wait" }
   { "file": "1.jpg", "caption": "KWACHEMA  Logo" },
   { "file": "2.jpg", "caption": "CHEMINGS Mark" },
   { "file": "3.jpg", "caption": "kindly wait" },
@@ -17,8 +19,9 @@
    { "file": "18.jpg", "caption": "kindly wait" },
    { "file": "19.jpg", "caption": "kindly wait" },
    { "file": "20.jpg", "caption": "kindly wait" },
-  { "file": "24.jpg", "caption": "kindly wait" }
+ 
 ]
+
 
 
 
