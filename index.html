@@ -1,309 +1,330 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DRG ICT Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRIPC ICT Portal</title>
 
-  <style>
-    /* ==========================
-       CSS VARIABLES (THEME)
-    ========================== */
-    :root {
-      --mauve: #9b6f9f;
-      --burgundy: #6d1f3a;
-      --accent: #84537f; /* blended tone */
-      --bg-light: #f7f3f7;
-      --text-dark: #2a1e2a;
-      --shadow-soft: 0 10px 30px rgba(132, 83, 127, 0.25);
-      --shadow-hover: 0 18px 45px rgba(109, 31, 58, 0.35);
-    }
+<style>
 
-    /* ==========================
-       GLOBAL STYLES
-    ========================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+:root{
+--primary:#5a6cff;
+--secondary:#7f6dff;
+--bg:#f5f7fc;
+--card:#ffffff;
+--text:#1e2430;
+--shadow:0 15px 40px rgba(0,0,0,0.08);
+}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, var(--bg-light), #ffffff);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+body{
+background:var(--bg);
+color:var(--text);
+}
 
-    img {
-      width: 100%;
-      display: block;
-    }
+a{
+text-decoration:none;
+color:inherit;
+}
 
-    /* ==========================
-       LAYOUT
-    ========================== */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem 1.5rem 4rem;
-    }
+/* NAVBAR */
 
-    /* ==========================
-       HERO SECTION
-    ========================== */
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-    }
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:white;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
 
-    .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--burgundy);
-      margin-bottom: 1rem;
-    }
+.logo{
+font-weight:700;
+font-size:20px;
+color:var(--primary);
+}
 
-    .hero p {
-      max-width: 680px;
-      margin: auto;
-      font-size: 1.05rem;
-      color: #4b3a4b;
-    }
+.nav-links a{
+margin-left:25px;
+font-size:14px;
+color:#444;
+}
 
-    /* ==========================
-       PROJECT GRID
-    ========================== */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
-    }
+/* HERO */
 
-    /* ==========================
-       PROJECT CARD
-    ========================== */
-    .project-card {
-      background: #ffffff;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      position: relative;
-    }
+.hero{
+background:linear-gradient(135deg,#4f6cff,#7a6cff);
+padding:80px 20px 130px;
+text-align:center;
+color:white;
+border-bottom-left-radius:120px;
+}
 
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-    }
+.hero h1{
+font-size:38px;
+margin-bottom:12px;
+}
 
-    /* ==========================
-       IMAGE OVERLAY
-    ========================== */
-    .project-image {
-      position: relative;
-      cursor: pointer;
-    }
+.hero p{
+max-width:720px;
+margin:auto;
+opacity:.9;
+}
 
-    .project-image::after {
-      content: "View Project";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(155, 111, 159, 0.85),
-        rgba(109, 31, 58, 0.85)
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 1.1rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+/* GRID */
 
-    .project-image:hover::after {
-      opacity: 1;
-    }
-    
+.container{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
 
-    /* ==========================
-       CARD CONTENT
-    ========================== */
-    .project-content {
-      padding: 1.4rem 1.5rem 1.8rem;
-    }
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:-100px;
+}
 
-    .project-content h3 {
-      color: var(--mauve);
-      margin-bottom: 0.4rem;
-      font-size: 1.2rem;
-    }
+/* CARD */
 
-    .project-content p {
-      font-size: 0.95rem;
-      color: #5a4a5a;
-    }
+.project-card{
+background:var(--card);
+border-radius:18px;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:0.35s;
+}
 
-    /* ==========================
-       FOOTER
-    ========================== */
-    footer {
-      text-align: center;
-      margin-top: 5rem;
-      font-size: 0.85rem;
-      color: #7a687a;
-    }
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
+}
 
-    /* ==========================
-       RESPONSIVE TWEAKS
-    ========================== */
-    @media (max-width: 480px) {
-      .hero {
-        padding-top: 3rem;
-      }
-    }
-  </style>
+/* IMAGE */
+
+.project-image{
+position:relative;
+}
+
+.project-image img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.project-image::after{
+content:"Open System";
+position:absolute;
+inset:0;
+background:rgba(80,90,255,.8);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:600;
+opacity:0;
+transition:.3s;
+}
+
+.project-image:hover::after{
+opacity:1;
+}
+
+/* CONTENT */
+
+.project-content{
+padding:20px;
+}
+
+.project-content h3{
+margin-bottom:6px;
+font-size:18px;
+color:#4f5cff;
+}
+
+.project-content p{
+font-size:14px;
+color:#666;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+margin:60px 0 20px;
+font-size:13px;
+color:#777;
+}
+
+</style>
 </head>
 
 <body>
-  <section class="hero">
-    <h1>
-         CRIPC ICT PORTAL </h1>
-    <p>
-  We are pleased to welcome you to this exclusive digital gateway, specifically designed for the Information and Communication Technology (ICT) sector. 
-      This platform serves as a centralized hub for industry leaders and 
-      specialists to access premium resources, foster strategic partnerships, and navigate the evolving technological landscape.
-    </p>
-  </section>
 
-  <main class="container">
-    <section class="projects">
+<!-- NAVBAR -->
 
-      <!-- PROJECT 1 -->
-      <a href="https://docs.google.com/document/d/1n0Z-TF__A0CyfQdaGW_OrzgVt3DK7xbs9W_VKFPJLdU/edit?usp=sharing" target="_blank" class="project-card">
-        <div class="project-image">
-          <img src="project1.jpg" alt="Project 1" />
-        </div>
-        <div class="project-content">
-          <h3>ICT documentation</h3>
-          <p>
-            A well elucidated document describing the infranstructure of the Registrar General.
-          </p>
-        </div>
-      </a>
+<div class="navbar">
+<div class="logo">CRIPC ICT PORTAL</div>
 
-      <!-- PROJECT 2 -->
-      <a href="web/index.html" target="_self" class="project-card">
-        <div class="project-image">
-          <img src="project2.jpg" alt="Project 2" />
-        </div>
-        <div class="project-content">
-          <h3>Web Development</h3>
-          <p>Development in progress.</p>
-        </div>
-      </a>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Systems</a>
+<a href="#">Support</a>
+</div>
+</div>
 
-      <!-- PROJECT 3 -->
-      <a href="logo/index.html" target="_self" class="project-card">
-        <div class="project-image">
-          <img src="project3.jpg" alt="Project 3" />
-        </div>
-        <div class="project-content">
-          <h3>LOGO CRIPC DESIGNS</h3>
-          <p> Brainstorming and creating logos for .</p>
-        </div>
-      </a>
 
-      <!-- PROJECT 4 -->
-      <a href="workspace.html" target="_blank" class="project-card">
-        <div class="project-image">
-          <img src="project4.jpg" alt="Project 4" />
-        </div>
-        <div class="project-content">
-          <h3>IPAS </h3>
-          <p> This comprises of manuals, activities needed to be carried out by the ICT department for example, closing of the year, opening of the new year, configuration of non-working days and many more</p>
-        </div>
-      </a>
+<!-- HERO -->
 
-      <!-- PROJECT 5 -->
-      <a href="https://example.com/project5" target="_blank" class="project-card">
-        <div class="project-image">
-          <img src="project5.jpg" alt="Project 5" />
-        </div>
-        <div class="project-content">
-          <h3>MBRS REPORTING SYS</h3>
-          <p>A reporting system is a centralized digital tool that transforms raw data into clear, actionable 
-            insights for better decision-making. It simplifies management by tracking pending issues,
-            generating real-time statistics, and presenting performance through visual graphs and reports.
-            By automating data collection,</p>
-        </div>
-      </a>
+<section class="hero">
 
-      <!-- PROJECT 6 -->
-      <a href="https://example.com/project6" target="_blank" class="project-card">
-        <div class="project-image">
-          <img src="https://via.placeholder.com/600x400" alt="Project 6" />
-        </div>
-        <div class="project-content">
-          <h3>Incoming project</h3>
-          <p> Wait for the suprise </p>
-        </div>
-      </a>
+<h1>CRIPC ICT PORTAL</h1>
 
-    </section>
-  </main>
+<p>
+We are pleased to welcome you to this exclusive digital gateway designed for the ICT sector.
+This platform serves as a centralized hub where specialists can access documentation,
+systems, and operational tools in one place.
+</p>
 
-  <footer>
-    © 2026 • DRG  Portfolio
-  </footer>
+</section>
 
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBTqjl5-9rDOuZTyTzkTVhYCCsFu3CrtJs",
-    authDomain: "cripc-logos.firebaseapp.com",
-    projectId: "cripc-logos",
-    storageBucket: "cripc-logos.firebasestorage.app",
-    messagingSenderId: "726628093980",
-    appId: "1:726628093980:web:6f79ec3879bf6c72838fd9",
-    measurementId: "G-WERJE06KSX"
-  };
+<!-- SYSTEMS -->
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+<main class="container">
+
+<section class="projects">
+
+
+<!-- PROJECT 1 -->
+
+<a href="https://docs.google.com/document/d/1n0Z-TF__A0CyfQdaGW_OrzgVt3DK7xbs9W_VKFPJLdU/edit?usp=sharing" target="_blank" class="project-card">
+
+<div class="project-image">
+<img src="project1.jpg" alt="Project 1">
+</div>
+
+<div class="project-content">
+<h3>ICT Documentation</h3>
+<p>
+A well elucidated document describing the infrastructure of the Registrar General.
+</p>
+</div>
+
+</a>
+
+
+<!-- PROJECT 2 -->
+
+<a href="web/index.html" target="_self" class="project-card">
+
+<div class="project-image">
+<img src="project2.jpg" alt="Project 2">
+</div>
+
+<div class="project-content">
+<h3>Web Development</h3>
+<p>Development in progress.</p>
+</div>
+
+</a>
+
+
+<!-- PROJECT 3 -->
+
+<a href="logo/index.html" target="_self" class="project-card">
+
+<div class="project-image">
+<img src="project3.jpg" alt="Project 3">
+</div>
+
+<div class="project-content">
+<h3>LOGO CRIPC DESIGNS</h3>
+<p>Brainstorming and creating logos.</p>
+</div>
+
+</a>
+
+
+<!-- PROJECT 4 -->
+
+<a href="workspace.html" target="_blank" class="project-card">
+
+<div class="project-image">
+<img src="project4.jpg" alt="Project 4">
+</div>
+
+<div class="project-content">
+<h3>IPAS</h3>
+
+<p>
+Manuals and ICT department operational procedures including
+year closing, new year setup, and system configuration.
+</p>
+
+</div>
+
+</a>
+
+
+<!-- PROJECT 5 -->
+
+<a href="https://example.com/project5" target="_blank" class="project-card">
+
+<div class="project-image">
+<img src="project5.jpg" alt="Project 5">
+</div>
+
+<div class="project-content">
+
+<h3>MBRS Reporting System</h3>
+
+<p>
+A reporting system that transforms raw data into clear actionable
+insights with dashboards, graphs, and performance tracking.
+</p>
+
+</div>
+
+</a>
+
+
+<!-- PROJECT 6 -->
+
+<a href="https://example.com/project6" target="_blank" class="project-card">
+
+<div class="project-image">
+<img src="https://via.placeholder.com/600x400" alt="Project 6">
+</div>
+
+<div class="project-content">
+
+<h3>Incoming Project</h3>
+
+<p>Wait for the surprise.</p>
+
+</div>
+
+</a>
+
+
+</section>
+
+</main>
+
+
+<footer>
+© 2026 • DRG Portfolio
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
