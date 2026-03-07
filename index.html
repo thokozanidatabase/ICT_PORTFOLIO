@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +8,11 @@
 <style>
 
 :root{
---primary:#5a6cff;
---secondary:#7f6dff;
---bg:#f5f7fc;
+--primary:#5b4bff;
+--secondary:#7c6cff;
+--bg:#f4f6fb;
 --card:#ffffff;
---text:#1e2430;
+--text:#1f2a44;
 --shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
@@ -61,24 +60,50 @@ color:#444;
 
 .hero{
 background:linear-gradient(135deg,#4f6cff,#7a6cff);
-padding:80px 20px 130px;
+padding:80px 20px 120px;
 text-align:center;
 color:white;
 border-bottom-left-radius:120px;
 }
 
 .hero h1{
-font-size:38px;
-margin-bottom:12px;
+font-size:40px;
+margin-bottom:10px;
 }
 
 .hero p{
-max-width:720px;
+max-width:700px;
 margin:auto;
 opacity:.9;
 }
 
-/* GRID */
+/* PORTAL SEARCH */
+
+.portal-box{
+margin-top:35px;
+display:flex;
+justify-content:center;
+}
+
+.portal-box input{
+width:350px;
+padding:14px 20px;
+border:none;
+border-radius:40px 0 0 40px;
+outline:none;
+}
+
+.portal-box button{
+padding:14px 25px;
+border:none;
+background:white;
+color:#4f6cff;
+font-weight:600;
+border-radius:0 40px 40px 0;
+cursor:pointer;
+}
+
+/* SYSTEM GRID */
 
 .container{
 max-width:1200px;
@@ -86,71 +111,41 @@ margin:auto;
 padding:60px 20px;
 }
 
-.projects{
+.systems{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:30px;
-margin-top:-100px;
+margin-top:-80px;
 }
 
-/* CARD */
+/* SYSTEM CARD */
 
-.project-card{
+.system-card{
 background:var(--card);
+padding:30px;
 border-radius:18px;
-overflow:hidden;
+text-align:center;
 box-shadow:var(--shadow);
-transition:0.35s;
+transition:.35s;
 }
 
-.project-card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 60px rgba(0,0,0,0.12);
+.system-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* IMAGE */
-
-.project-image{
-position:relative;
+.icon{
+font-size:40px;
+margin-bottom:15px;
+color:var(--primary);
 }
 
-.project-image img{
-width:100%;
-height:170px;
-object-fit:cover;
-}
-
-.project-image::after{
-content:"Open System";
-position:absolute;
-inset:0;
-background:rgba(80,90,255,.8);
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-weight:600;
-opacity:0;
-transition:.3s;
-}
-
-.project-image:hover::after{
-opacity:1;
-}
-
-/* CONTENT */
-
-.project-content{
-padding:20px;
-}
-
-.project-content h3{
-margin-bottom:6px;
+.system-card h3{
 font-size:18px;
-color:#4f5cff;
+margin-bottom:10px;
 }
 
-.project-content p{
+.system-card p{
 font-size:14px;
 color:#666;
 }
@@ -181,150 +176,114 @@ color:#777;
 </div>
 </div>
 
-
 <!-- HERO -->
 
 <section class="hero">
 
-<h1>CRIPC ICT PORTAL</h1>
+<h1>Welcome to the ICT Digital Portal</h1>
 
 <p>
-We are pleased to welcome you to this exclusive digital gateway designed for the ICT sector.
-This platform serves as a centralized hub where specialists can access documentation,
-systems, and operational tools in one place.
+A centralized gateway where ICT professionals can access internal systems,
+documentation, tools, and reporting platforms in one place.
 </p>
+
+<div class="portal-box">
+<input placeholder="Search system or resource">
+<button>Access</button>
+</div>
 
 </section>
 
+<!-- SYSTEM CARDS -->
 
-<!-- SYSTEMS -->
+<div class="container">
 
-<main class="container">
+<div class="systems">
 
-<section class="projects">
+<a href="https://docs.google.com/document/d/1n0Z-TF__A0CyfQdaGW_OrzgVt3DK7xbs9W_VKFPJLdU/edit?usp=sharing" class="system-card">
 
+<div class="icon">📄</div>
 
-<!-- PROJECT 1 -->
-
-<a href="https://docs.google.com/document/d/1n0Z-TF__A0CyfQdaGW_OrzgVt3DK7xbs9W_VKFPJLdU/edit?usp=sharing" target="_blank" class="project-card">
-
-<div class="project-image">
-<img src="project1.jpg" alt="Project 1">
-</div>
-
-<div class="project-content">
 <h3>ICT Documentation</h3>
+
 <p>
-A well elucidated document describing the infrastructure of the Registrar General.
+Infrastructure documentation and technical guides.
 </p>
-</div>
 
 </a>
 
 
-<!-- PROJECT 2 -->
+<a href="web/index.html" class="system-card">
 
-<a href="web/index.html" target="_self" class="project-card">
+<div class="icon">🌐</div>
 
-<div class="project-image">
-<img src="project2.jpg" alt="Project 2">
-</div>
-
-<div class="project-content">
 <h3>Web Development</h3>
-<p>Development in progress.</p>
-</div>
-
-</a>
-
-
-<!-- PROJECT 3 -->
-
-<a href="logo/index.html" target="_self" class="project-card">
-
-<div class="project-image">
-<img src="project3.jpg" alt="Project 3">
-</div>
-
-<div class="project-content">
-<h3>LOGO CRIPC DESIGNS</h3>
-<p>Brainstorming and creating logos.</p>
-</div>
-
-</a>
-
-
-<!-- PROJECT 4 -->
-
-<a href="workspace.html" target="_blank" class="project-card">
-
-<div class="project-image">
-<img src="project4.jpg" alt="Project 4">
-</div>
-
-<div class="project-content">
-<h3>IPAS</h3>
 
 <p>
-Manuals and ICT department operational procedures including
-year closing, new year setup, and system configuration.
+Internal development projects and resources.
 </p>
-
-</div>
 
 </a>
 
 
-<!-- PROJECT 5 -->
+<a href="logo/index.html" class="system-card">
 
-<a href="https://example.com/project5" target="_blank" class="project-card">
+<div class="icon">🎨</div>
 
-<div class="project-image">
-<img src="project5.jpg" alt="Project 5">
-</div>
-
-<div class="project-content">
-
-<h3>MBRS Reporting System</h3>
+<h3>CRIPC Logo Designs</h3>
 
 <p>
-A reporting system that transforms raw data into clear actionable
-insights with dashboards, graphs, and performance tracking.
+Branding concepts and design proposals.
 </p>
 
-</div>
+</a>
+
+
+<a href="workspace.html" class="system-card">
+
+<div class="icon">⚙️</div>
+
+<h3>IPAS Manuals</h3>
+
+<p>
+Operational guides and configuration procedures.
+</p>
 
 </a>
 
 
-<!-- PROJECT 6 -->
+<a href="#" class="system-card">
 
-<a href="https://example.com/project6" target="_blank" class="project-card">
+<div class="icon">📊</div>
 
-<div class="project-image">
-<img src="https://via.placeholder.com/600x400" alt="Project 6">
-</div>
+<h3>MBRS Reporting</h3>
 
-<div class="project-content">
-
-<h3>Incoming Project</h3>
-
-<p>Wait for the surprise.</p>
-
-</div>
+<p>
+Track reports, statistics and performance dashboards.
+</p>
 
 </a>
 
 
-</section>
+<a href="#" class="system-card">
 
-</main>
+<div class="icon">🚀</div>
 
+<h3>Upcoming System</h3>
+
+<p>
+Future ICT services will be added here.
+</p>
+
+</a>
+
+</div>
+
+</div>
 
 <footer>
-© 2026 • DRG Portfolio
+© 2026 • CRIPC ICT Portal
 </footer>
 
 </body>
 </html>
-```
