@@ -1,13 +1,26 @@
 [
-    { "file": "50.jpg", "caption": "kindly wait" },
-   { "file": "24.jpg", "caption": "kindly wait" },
-   { "file": "30.jpg", "caption": "kindly wait" },
-  { "file": "1.jpg", "caption": "KWACHEMA  Logo" },
-  { "file": "2.jpg", "caption": "CHEMINGS Mark" },
+    { "file": "50.jpg", "caption": " " },
+   { "file": "24.jpg", "caption": "" },
+   { "file": "30.jpg", "caption": "" },
+  { "file": "1.jpg", "caption": "" },
+  { "file": "2.jpg", "caption": "" },
   { "file": "3.jpg", "caption": "kindly wait" },
   { "file": "4.jpg", "caption": "kindly wait" },
   { "file": "5.jpg", "caption": "kindly wait" },
-  { "file": "6.jpg", "caption": "kindly wait" },
+
+       { "file": "51.jpg", "caption": "kindly wait" },
+       { "file": "52.jpg", "caption": "kindly wait" },
+       { "file": "53.jpg", "caption": "kindly wait" },
+       { "file": "54.jpg", "caption": "kindly wait" },
+       { "file": "55.jpg", "caption": "kindly wait" },
+       { "file": "56.jpg", "caption": "kindly wait" },
+       { "file": "57.jpg", "caption": "kindly wait" },
+       { "file": "58.jpg", "caption": "kindly wait" },
+       { "file": "59.jpg", "caption": "kindly wait" },
+       { "file": "60.jpg", "caption": "kindly wait" },
+       { "file": "61.jpg", "caption": "kindly wait" },
+       { "file": "62.jpg", "caption": "kindly wait" },
+      { "file": "6.jpg", "caption": "kindly wait" },
   { "file": "7.jpg", "caption": "kindly wait" },
   { "file": "8.jpg", "caption": "kindly wait" },
   { "file": "9.jpg", "caption": "kindly wait" },
@@ -20,7 +33,6 @@
    { "file": "18.jpg", "caption": "kindly wait" },
    { "file": "19.jpg", "caption": "kindly wait" },
    { "file": "20.jpg", "caption": "kindly wait" }
- 
 ]
 
 
