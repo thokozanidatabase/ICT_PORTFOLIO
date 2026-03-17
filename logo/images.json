@@ -1,14 +1,5 @@
 [
-    { "file": "50.jpg", "caption": " " },
-   { "file": "24.jpg", "caption": "" },
-   { "file": "30.jpg", "caption": "" },
-  { "file": "1.jpg", "caption": "" },
-  { "file": "2.jpg", "caption": "" },
-  { "file": "3.jpg", "caption": "kindly wait" },
-  { "file": "4.jpg", "caption": "kindly wait" },
-  { "file": "5.jpg", "caption": "kindly wait" },
-
-       { "file": "51.jpg", "caption": "kindly wait" },
+   
        { "file": "52.jpg", "caption": "kindly wait" },
        { "file": "53.jpg", "caption": "kindly wait" },
        { "file": "54.jpg", "caption": "kindly wait" },
@@ -32,7 +23,15 @@
    { "file": "17.jpg", "caption": "kindly wait" },
    { "file": "18.jpg", "caption": "kindly wait" },
    { "file": "19.jpg", "caption": "kindly wait" },
-   { "file": "20.jpg", "caption": "kindly wait" }
+   { "file": "20.jpg", "caption": "kindly wait" },
+   { "file": "50.jpg", "caption": " " },
+   { "file": "30.jpg", "caption": "" },
+  { "file": "1.jpg", "caption": "" },
+  { "file": "2.jpg", "caption": "" },
+  { "file": "3.jpg", "caption": "kindly wait" },
+  { "file": "4.jpg", "caption": "kindly wait" },
+  { "file": "5.jpg", "caption": "kindly wait" },
+ { "file": "51.jpg", "caption": "kindly wait" },
 ]
 
 
