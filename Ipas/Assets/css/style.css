@@ -44,38 +44,33 @@ font-size:28px;
 
 }
 
-.sidebar ul{
-
-list-style:none;
-
+.sidebar ul {
+    list-style: none;
+    padding: 0;
 }
 
-.sidebar li{
-
-padding:16px 18px;
-margin-bottom:15px;
-
-border-radius:10px;
-
-cursor:pointer;
-
-transition:.3s;
-
-font-size:17px;
-
+.sidebar li {
+    margin-bottom: 15px;
 }
 
-.sidebar li i{
-
-margin-right:12px;
-
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.sidebar li:hover{
-
-background:rgba(255,255,255,.15);
-
+.sidebar li a:hover {
+    background: rgba(255,255,255,0.15);
 }
+
+.sidebar li.active a {
+    background: rgba(255,255,255,0.25);
+}}
 
 .active{
 
